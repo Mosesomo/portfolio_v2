@@ -8,10 +8,10 @@ import Nav from './components/Nav';
 
 const App = () => {
   return (
-      <div className="h-screen bg-slate-950 w-full fixed flex">
+      <div className="h-full md:h-screen bg-slate-950 flex justify-start">
         <Sidebar />
-        <div className='p-1 pt-4 pb-6 w-full'>
-          <div className='w-full bg-gray-900'>
+        <div className='p-4 pl-0 pb-6 w-full'>
+          <div className='bg-gray-900 lg:h-[667px]'>
             <Router>
               <Nav />
               <Routes>
