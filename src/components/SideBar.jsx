@@ -19,11 +19,11 @@ const Sidebar = () => {
                     </div>
                     <div className='flex gap-2 items-center'>
                         <FaGithub size={32} className='text-orange-200 bg-slate-950 p-2 rounded-md'/>
-                        <a className='font-semibold hover:text-orange-200 transition duration-300 ease-in-out' href="https://github.com/Mosesomo">GitHub</a>
+                        <a className='font-semibold hover:text-orange-200 transition duration-300 ease-in-out' href="https://github.com/Mosesomo"  target='_blank' rel="noopener noreferrer">GitHub</a>
                     </div>
                     <div className='flex gap-2 items-center'>
                         <FaLinkedin size={32} className='text-orange-200 bg-slate-950 p-2 rounded-md'/>
-                        <a className='font-semibold hover:text-orange-200 transition duration-300 ease-in-out' href="https://www.linkedin.com/in/moses-wamboga-698a8825">Linkedln</a>
+                        <a className='font-semibold hover:text-orange-200 transition duration-300 ease-in-out' href="https://www.linkedin.com/in/moses-wamboga-698a8825"  target='_blank' rel="noopener noreferrer">Linkedln</a>
                     </div>
                     <div className='flex gap-2 items-center'>
                         <MdLocalPhone size={32} className='text-orange-200 bg-slate-950 p-2 rounded-md'/>
