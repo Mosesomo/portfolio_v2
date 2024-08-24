@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { FaWhatsapp } from "react-icons/fa";
 import Sidebar from './components/SideBar';
@@ -8,14 +9,16 @@ import Contact from './pages/Contact';
 import Nav from './components/Nav';
 
 const App = () => {
+  const [isSidebarVisible, setSidebarVisible] = useState(false);
+
   return (
     <div className="min-h-screen bg-slate-950">
       <div className="flex justify-start">
-        <Sidebar />
+        <Sidebar isVisible={isSidebarVisible} />
         <div className='p-4 pl-0 pb-6 w-full'>
           <div className='bg-gray-900 lg:h-[667px]'>
             <Router>
-              <Nav />
+              <Nav toggleSidebar={() => setSidebarVisible(!isSidebarVisible)} />
               <Routes>
                 <Route path="/" element={<About />} />
                 <Route path="/resume" element={<Resume />} />

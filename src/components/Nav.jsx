@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom';
+import { FaBars } from "react-icons/fa"; 
 
-const Nav = () => {
+const Nav = ({ toggleSidebar }) => {
     return (
-        <div className='bg-slate-950 w-[340px] p-3 rounded-b-md fixed top-0'>
-            <div className='w-full text-white flex gap-5'>
+        <div className='bg-slate-950 w-full p-3 rounded-b-md fixed top-0 flex justify-between items-center'>
+            <div className='text-white flex gap-5'>
                 <NavLink 
                     to='/' 
                     className={({ isActive }) => 
@@ -30,6 +31,11 @@ const Nav = () => {
                     Contact
                 </NavLink>
             </div>
+            <button
+                onClick={toggleSidebar}
+                className='text-white md:hidden'>
+                <FaBars size={24} />
+            </button>
         </div>
     );
 };
