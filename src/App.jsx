@@ -33,7 +33,7 @@ const App = () => {
       {/* Fixed WhatsApp Button */}
       <div className='fixed bottom-5 right-6'>
         <a
-          href="https://wa.me/+254758171116"
+          href="https://wa.me/+254706737539"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center bg-green-500 text-white rounded-full h-[67px] w-[67px] hover:bg-green-600 transition duration-300 ease-in-out transform hover:scale-110 animate-pulseGreen"

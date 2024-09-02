@@ -31,7 +31,7 @@ const Sidebar = ({ isVisible }) => {
             </div>
             <div className='border-[1px] border-gray-300 w-full mt-8'></div>
             <div className='mt-28'>
-                <a href='https://drive.google.com/file/d/1fHliqtD-khtaID08Yig9pJlQNHLvtkbm/view?usp=sharing'>
+                <a href='https://drive.google.com/file/d/1ad11v4m6g67cxlaCUKMAFlD4ky4h0v0j/view?usp=sharing'>
                     <button className='bg-orange-500 w-full p-2 text-center rounded-md font-semibold hover:bg-slate-950'>Download CV</button>
                 </a>
             </div>

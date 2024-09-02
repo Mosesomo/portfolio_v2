@@ -3,6 +3,7 @@ import blog from '../assets/blog.png'
 import reales from '../assets/reales.png'
 import netflix from '../assets/netflix.png'
 import vote from '../assets/vote.png'
+import sussum from '../assets/sussum.png'
 
 const Portfolio = () => {
     return (
@@ -39,6 +40,12 @@ const Portfolio = () => {
                         <img className='w-full h-[176px] object-cover rounded-md hover:bg-opacity/80' src={vote}></img>
                     </a>
                     <p className='mt-3 font-semibold text-orange-200'>Voting Application</p>
+                </div>
+                <div className='bg-slate-950 p-3 rounded-md transition duration-300 ease-in-out transform hover:scale-110'>
+                    <a href='https://subssum-seven.vercel.app/'>
+                        <img className='w-full h-[176px] object-cover rounded-md hover:bg-opacity/80' src={sussum}></img>
+                    </a>
+                    <p className='mt-3 font-semibold text-orange-200'>Finance Application</p>
                 </div>
             </div>
         </div>
