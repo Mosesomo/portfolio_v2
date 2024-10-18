@@ -4,6 +4,7 @@ import reales from '../assets/reales.png'
 import netflix from '../assets/netflix.png'
 import vote from '../assets/vote.png'
 import sussum from '../assets/sussum.png'
+import lm from '../assets/lm.png'
 
 const Portfolio = () => {
     return (
@@ -46,6 +47,12 @@ const Portfolio = () => {
                         <img className='w-full h-[176px] object-cover rounded-md hover:bg-opacity/80' src={sussum}></img>
                     </a>
                     <p className='mt-3 font-semibold text-orange-200'>Finance Application</p>
+                </div>
+                <div className='bg-slate-950 p-3 rounded-md transition duration-300 ease-in-out transform hover:scale-110'>
+                    <a href='https://library-management-1-smd2.onrender.com/books'>
+                        <img className='w-full h-[176px] object-cover rounded-md hover:bg-opacity/80' src={lm}></img>
+                    </a>
+                    <p className='mt-3 font-semibold text-orange-200'>Library Management system</p>
                 </div>
             </div>
         </div>
