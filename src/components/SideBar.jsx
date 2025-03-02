@@ -108,7 +108,7 @@ const Sidebar = ({ isVisible, toggleSidebar }) => {
                     <div className='h-px bg-gradient-to-r from-transparent via-orange-300/20 to-transparent w-full mb-6'></div>
                     
                     <a 
-                        href='https://drive.google.com/file/d/1ad11v4m6g67cxlaCUKMAFlD4ky4h0v0j/view?usp=sharing'
+                        href='https://drive.google.com/file/d/1XqPVjVE1fViIsWY0opb8VA48F7q46vfi/view?usp=sharing'
                         target='_blank'
                         rel="noopener noreferrer" 
                         className='block'
