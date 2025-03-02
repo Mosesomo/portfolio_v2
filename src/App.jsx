@@ -16,7 +16,7 @@ const App = () => {
       <div className="flex justify-start">
         <Sidebar isVisible={isSidebarVisible} />
         <div className='p-4 pl-0 pb-6 w-full'>
-          <div className='bg-gray-900 lg:h-[667px]'>
+          <div className='bg-gray-900 lg:h-screen'>
             <Router>
               <Nav toggleSidebar={() => setSidebarVisible(!isSidebarVisible)} />
               <Routes>
