@@ -8,8 +8,8 @@ const Contact = () => {
             id: 1,
             icon: <MdOutlineEmail size={24} />,
             title: "Email",
-            value: "mosesomondi260@gmail.com",
-            link: "mailto:mosesomondi260@gmail.com"
+            value: "moseswamboga4@gmail.com",
+            link: "mailto:moseswamboga4@gmail.com"
         },
         {
             id: 2,
