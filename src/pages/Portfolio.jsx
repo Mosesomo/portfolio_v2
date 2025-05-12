@@ -7,6 +7,7 @@ import vote from '../assets/vote.png'
 import sussum from '../assets/sussum.png'
 import lm from '../assets/lm.png'
 import event from '../assets/event.png'
+import shop from '../assets/shop.png'
 
 const Portfolio = () => {
     // State for pagination
@@ -17,20 +18,27 @@ const Portfolio = () => {
     const projects = [
         {
             id: 1,
-            title: "Digital Event Organizer Application",
-            image: event,
-            url: "https://catchapp-tau.vercel.app/",
-            description: "A comprehensive event management platform that helps users plan, organize, and execute events seamlessly. Features include event scheduling, attendee management, and real-time updates."
+            title: "Carlteq Ecommerce Shop",
+            image: shop,
+            url: "https://shop.carlteq.com",
+            description: "A comprehensive mini ecommerce shop for carlteq built using MERN stack, still in progress"
         },
         {
             id: 2,
+            title: "Digital Event Organizer Application",
+            image: event,
+            url: "https://catch-app-one.vercel.app/",
+            description: "A comprehensive event management platform that helps users plan, organize, and execute events seamlessly. Features include event scheduling, attendee management, and real-time updates."
+        },
+        {
+            id: 3,
             title: "Healthcare System",
             image: bot,
             url: "https://healthcarechatbot-9nij.onrender.com/",
             description: "An AI-powered healthcare chatbot that provides medical information and assistance to users. Features symptom analysis and medical advice."
         },
         {
-            id: 3,
+            id: 4,
             title: "Library Management System",
             image: lm,
             url: "https://library-management-1-smd2.onrender.com/books",
@@ -38,35 +46,35 @@ const Portfolio = () => {
         },
        
         {
-            id: 4,
+            id: 5,
             title: "Real Estate Finder",
             image: reales,
             url: "https://estate-finder.onrender.com/",
             description: "A property search platform that helps users find homes based on location, budget, and preferences with interactive maps."
         },
         {
-            id: 5,
+            id: 6,
             title: "Digital financial services platform",
             image: sussum,
             url: "https://subssum-seven.vercel.app/",
             description: "A modern digital finance platform that enables users to manage their wallet balance, buy airtime, pay bills, and make seamless transactions."
         },
         {
-            id: 6,
+            id: 7,
             title: "Movie Recommender Application",
             image: netflix,
             url: "https://dulcet-cranachan-2aeddc.netlify.app/",
             description: "Netflix-inspired application that recommends movies and shows based on user preferences and viewing history."
         },
         {
-            id: 7,
+            id: 8,
             title: "Voting Application",
             image: vote,
             url: "https://github.com/Mosesomo/online-voting-system",
             description: "Secure online voting system with user authentication, real-time results, and tamper-proof vote recording."
         },
         {
-            id: 8,
+            id: 9,
             title: "Blog Application",
             image: blog,
             url: "https://blog-7n5d.onrender.com/",
