@@ -83,7 +83,7 @@ const Sidebar = ({ isVisible, toggleSidebar }) => {
                         </div>
                     </a>
                     
-                    <a href="https://www.linkedin.com/in/moses-wamboga-698a8825" target='_blank' rel="noopener noreferrer" className='flex items-center gap-3 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300 group border border-transparent hover:border-orange-300/10'>
+                    <a href="https://www.linkedin.com/in/omondi-moses-20a61235a/" target='_blank' rel="noopener noreferrer" className='flex items-center gap-3 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300 group border border-transparent hover:border-orange-300/10'>
                         <div className='bg-slate-800 p-2.5 rounded-md text-orange-300 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg'>
                             <FaLinkedin size={18} />
                         </div>
