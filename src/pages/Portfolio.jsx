@@ -36,7 +36,7 @@ const ModernPortfolio = () => {
       url: "https://healthcarechatbot-9nij.onrender.com/",
       github: "https://github.com/Mosesomo/healthcare-bot",
       description: "An AI-powered healthcare chatbot that provides medical information and assistance to users.",
-      technologies: ["Python", "Flask", "AI/ML", "SQLite"],
+      technologies: ["Python", "Flask", "SCSS", "AI/ML", "SQLite"],
     },
     {
       id: 4,
@@ -54,7 +54,7 @@ const ModernPortfolio = () => {
       url: "https://estate-finder.onrender.com/",
       github: "https://github.com/Mosesomo/real-estate",
       description: "A property search platform that helps users find homes based on location, budget, and preferences.",
-      technologies: ["React", "Node.js", "MongoDB", "Maps API"],
+      technologies: ["Flask", "SCSS", "Jinja2", "SQLite", "Bootstrap"],
     },
     {
       id: 6,
@@ -92,7 +92,7 @@ const ModernPortfolio = () => {
       url: "https://blog-7n5d.onrender.com/",
       github: "https://github.com/Mosesomo/Flask-blog",
       description: "A full-featured blog platform with user authentication, post creation, and commenting features.",
-      technologies: ["Node.js", "Express", "MongoDB", "EJS"],
+      technologies: ["Flask", "Jinja2", "SQLite", "Bootstrap"],
     },
   ]
 
@@ -119,7 +119,7 @@ const ModernPortfolio = () => {
 
   const indexOfLastProject = currentPage * projectsPerPage
   const indexOfFirstProject = indexOfLastProject - projectsPerPage
-  const currentProjects = projects.slice(indexOfFirstProject, indexOfLastProject)
+  const currentProjects = defaultProjects.slice(indexOfFirstProject, indexOfLastProject)
   const totalPages = Math.ceil(projects.length / projectsPerPage)
 
   const containerVariants = {
