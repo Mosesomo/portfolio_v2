@@ -37,7 +37,6 @@ const ModernNav = ({ toggleSidebar, toggleMobileNav, isMobileNavOpen }) => {
     { to: "/", label: "About", icon: "👤" },
     { to: "/portfolio", label: "Portfolio", icon: "💼" },
     { to: "/contact", label: "Contact", icon: "📧" },
-    { to: "/admin", label: "Admin", icon: "⚙️" },
   ]
 
   return (

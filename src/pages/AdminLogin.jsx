@@ -15,7 +15,7 @@ const AdminLogin = ({ onLogin }) => {
   // Simple authentication - in production, use proper authentication
   const ADMIN_CREDENTIALS = {
     username: "admin",
-    password: "admin123",
+    password: "Omondi@006#",
   }
 
   const onSubmit = async (data) => {
@@ -154,21 +154,6 @@ const AdminLogin = ({ onLogin }) => {
             )}
           </motion.button>
         </form>
-
-        <motion.div
-          className="mt-6 text-center text-sm text-gray-400"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-        >
-          <p>Demo credentials:</p>
-          <p>
-            Username: <span className="text-orange-400">admin</span>
-          </p>
-          <p>
-            Password: <span className="text-orange-400">admin123</span>
-          </p>
-        </motion.div>
       </motion.div>
     </div>
   )
