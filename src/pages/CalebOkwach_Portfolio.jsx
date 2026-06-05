@@ -98,15 +98,15 @@ const Tag = ({ text }) => (
   <span style={{
     fontSize: 11, fontFamily:"'Space Grotesk',sans-serif", fontWeight:600,
     letterSpacing:"0.05em", padding:"3px 10px", borderRadius:20,
-    background:"rgba(34,211,238,0.12)", color:"#67e8f9",
-    border:"1px solid rgba(34,211,238,0.25)", whiteSpace:"nowrap",
+    background:"rgba(212,175,55,0.12)", color:"#f0d060",
+    border:"1px solid rgba(212,175,55,0.25)", whiteSpace:"nowrap",
   }}>{text}</span>
 );
 
 const SectionLabel = ({ num, text }) => (
   <div style={{
     fontSize:11, fontWeight:700, letterSpacing:"0.2em",
-    textTransform:"uppercase", color:"#22d3ee", marginBottom:16,
+    textTransform:"uppercase", color:"#D4AF37", marginBottom:16,
     fontFamily:"'Space Grotesk',sans-serif",
   }}>{num} — {text}</div>
 );
@@ -142,9 +142,9 @@ const ProjectCard = ({ project, idx }) => (
         position:"absolute", top:12, right:12,
         fontSize:10, fontWeight:700, letterSpacing:"0.1em", textTransform:"uppercase",
         padding:"4px 10px", borderRadius:20,
-        background: project.category==="Graphic Design" ? "rgba(168,85,247,0.25)" : "rgba(34,211,238,0.2)",
-        color: project.category==="Graphic Design" ? "#d8b4fe" : "#67e8f9",
-        border:`1px solid ${project.category==="Graphic Design" ? "rgba(168,85,247,0.4)" : "rgba(34,211,238,0.3)"}`,
+        background: project.category==="Graphic Design" ? "rgba(212,175,55,0.25)" : "rgba(212,175,55,0.2)",
+        color: project.category==="Graphic Design" ? "#f0d060" : "#f0d060",
+        border:`1px solid ${project.category==="Graphic Design" ? "rgba(212,175,55,0.4)" : "rgba(212,175,55,0.3)"}`,
         fontFamily:"'Space Grotesk',sans-serif",
       }}>{project.category}</span>
     </div>
@@ -178,98 +178,144 @@ const HeroSection = ({ goTo }) => {
       <div style={{
         position:"absolute", top:"10%", left:"50%", width: isMobile ? 300 : 600,
         height: isMobile ? 300 : 600, borderRadius:"50%",
-        background:"radial-gradient(circle, rgba(34,211,238,0.08) 0%, transparent 70%)",
+        background:"radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 70%)",
         transform:"translateX(-50%)", pointerEvents:"none",
       }} />
       <div style={{
         position:"absolute", bottom:"0%", right:"-10%",
         width: isMobile ? 200 : 400, height: isMobile ? 200 : 400, borderRadius:"50%",
-        background:"radial-gradient(circle, rgba(168,85,247,0.07) 0%, transparent 70%)",
+        background:"radial-gradient(circle, rgba(212,175,55,0.07) 0%, transparent 70%)",
         pointerEvents:"none",
       }} />
 
-      <div style={{ maxWidth:800, margin:"0 auto", zIndex:1, width:"100%" }}>
-        {/* avatar + roles */}
+      <div style={{ maxWidth:1100, margin:"0 auto", zIndex:1, width:"100%", display:"flex", alignItems:"center", gap: isMobile ? 32 : 60 }}>
+        {/* Left: text content */}
         <motion.div
-          initial={{ opacity:0, y:-20 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.6 }}
-          style={{ display:"flex", alignItems:"center", gap: isMobile ? 14 : 18, marginBottom: isMobile ? 24 : 32 }}
+          initial={{ opacity:0, x:-30 }} animate={{ opacity:1, x:0 }}
+          transition={{ duration:0.7 }}
+          style={{ flex: isMobile ? "1 1 100%" : "1 1 55%" }}
         >
+          {/* Available badge */}
           <div style={{
-            width: isMobile ? 52 : 64, height: isMobile ? 52 : 64, borderRadius:"50%",
-            background:"linear-gradient(135deg, #22d3ee, #a855f7)",
-            display:"flex", alignItems:"center", justifyContent:"center",
-            fontSize: isMobile ? 18 : 22, fontWeight:800, color:"#fff",
-            fontFamily:"'Syne',sans-serif", flexShrink:0,
-            boxShadow:"0 0 0 4px rgba(34,211,238,0.15)",
-          }}>CO</div>
-          <div>
-            <div style={{
+            display:"inline-flex", alignItems:"center", gap:8,
+            padding:"6px 14px", borderRadius:50,
+            background:"rgba(212,175,55,0.1)",
+            border:"1px solid rgba(212,175,55,0.3)",
+            marginBottom:24,
+          }}>
+            <div style={{ width:8, height:8, borderRadius:"50%", background:"#D4AF37", animation:"pulse 2s infinite" }} />
+            <span style={{
               fontSize:11, fontWeight:700, letterSpacing:"0.15em",
-              textTransform:"uppercase", color:"#22d3ee",
+              textTransform:"uppercase", color:"#D4AF37",
               fontFamily:"'Space Grotesk',sans-serif",
-            }}>Available for freelance</div>
-            <div style={{ display:"flex", gap: isMobile ? 4 : 8, flexWrap:"wrap", marginTop:6 }}>
-              {PERSON.roles.map(r => (
-                <span key={r} style={{
-                  fontSize: isMobile ? 11 : 12, color:"rgba(200,220,255,0.7)",
-                  fontFamily:"'Space Grotesk',sans-serif", fontWeight:500,
-                }}>✦ {r}</span>
-              ))}
-            </div>
+            }}>Available for freelance</span>
           </div>
+
+          {/* Roles */}
+          <div style={{ display:"flex", gap: isMobile ? 4 : 8, flexWrap:"wrap", marginBottom:20 }}>
+            {PERSON.roles.map(r => (
+              <span key={r} style={{
+                fontSize: isMobile ? 11 : 12, color:"rgba(200,220,255,0.7)",
+                fontFamily:"'Space Grotesk',sans-serif", fontWeight:500,
+              }}>✦ {r}</span>
+            ))}
+          </div>
+
+          {/* Name */}
+          <motion.h1
+            initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }}
+            transition={{ delay:0.15, duration:0.7 }}
+            style={{
+              fontSize: isMobile ? "clamp(36px,11vw,72px)" : "clamp(42px,7vw,88px)",
+              fontFamily:"'Syne',sans-serif", fontWeight:800,
+              lineHeight:1.0, letterSpacing:"-0.03em",
+              margin:"0 0 20px", color:"#f0f4ff",
+            }}
+          >
+            {PERSON.name.split(" ").map((w, i) => (
+              <span key={i} style={{ display:"block" }}>
+                {i===1 ? (
+                  <span style={{
+                    background:"linear-gradient(90deg, #D4AF37, #F0D060)",
+                    WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent",
+                  }}>{w}</span>
+                ) : w}
+              </span>
+            ))}
+          </motion.h1>
+
+          {/* Tagline */}
+          <motion.p
+            initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ delay:0.35, duration:0.6 }}
+            style={{
+              fontSize: isMobile ? 15 : 18, color:"rgba(180,200,240,0.75)",
+              fontFamily:"'Space Grotesk',sans-serif", lineHeight:1.55,
+              maxWidth:480, margin:"0 0 36px",
+            }}
+          >{PERSON.tagline}</motion.p>
+
+          {/* CTA buttons */}
+          <motion.div
+            initial={{ opacity:0, y:10 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.5 }}
+            style={{ display:"flex", gap: isMobile ? 10 : 14, flexWrap:"wrap" }}
+          >
+            <button onClick={() => goTo(3)} style={{
+              padding: isMobile ? "12px 24px" : "14px 32px", borderRadius:50,
+              background:"linear-gradient(135deg, #D4AF37, #D4AF37)",
+              border:"none", color:"#020d1a",
+              fontFamily:"'Space Grotesk',sans-serif",
+              fontSize: isMobile ? 13 : 14, fontWeight:700, letterSpacing:"0.04em",
+              cursor:"pointer", boxShadow:"0 8px 24px rgba(212,175,55,0.3)",
+            }}>View My Work →</button>
+            <button onClick={() => goTo(4)} style={{
+              padding: isMobile ? "12px 24px" : "14px 32px", borderRadius:50,
+              background:"transparent",
+              border:"1.5px solid rgba(255,255,255,0.2)", color:"#f0f4ff",
+              fontFamily:"'Space Grotesk',sans-serif",
+              fontSize: isMobile ? 13 : 14, fontWeight:600, letterSpacing:"0.04em",
+              cursor:"pointer",
+            }}>Get In Touch</button>
+          </motion.div>
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }}
-          transition={{ delay:0.15, duration:0.7 }}
-          style={{
-            fontSize: isMobile ? "clamp(38px,10vw,56px)" : "clamp(42px,8vw,80px)",
-            fontFamily:"'Syne',sans-serif", fontWeight:800,
-            lineHeight:1.05, letterSpacing:"-0.03em",
-            margin:"0 0 16px", color:"#f0f4ff",
-          }}
-        >
-          {PERSON.name.split(" ").map((w, i) => (
-            <span key={i} style={{ display:"block" }}>
-              {i===1 ? (
-                <span style={{
-                  background:"linear-gradient(90deg, #22d3ee, #a855f7)",
-                  WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent",
-                }}>{w}</span>
-              ) : w}
-            </span>
-          ))}
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ delay:0.35, duration:0.6 }}
-          style={{
-            fontSize: isMobile ? 15 : 18, color:"rgba(180,200,240,0.75)",
-            fontFamily:"'Space Grotesk',sans-serif", lineHeight:1.55,
-            maxWidth:520, margin:"0 0 36px",
-          }}
-        >{PERSON.tagline}</motion.p>
-
+        {/* Right: profile photo */}
         <motion.div
-          initial={{ opacity:0, y:10 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.5 }}
-          style={{ display:"flex", gap: isMobile ? 10 : 14, flexWrap:"wrap" }}
+          initial={{ opacity:0, x:30 }} animate={{ opacity:1, x:0 }}
+          transition={{ duration:0.7, delay:0.2 }}
+          style={{
+            flex: isMobile ? "1 1 100%" : "1 1 45%",
+            display:"flex", justifyContent:"center", alignItems:"center",
+          }}
         >
-          <button onClick={() => goTo(3)} style={{
-            padding: isMobile ? "12px 24px" : "14px 32px", borderRadius:50,
-            background:"linear-gradient(135deg, #22d3ee, #06b6d4)",
-            border:"none", color:"#020d1a",
-            fontFamily:"'Space Grotesk',sans-serif",
-            fontSize: isMobile ? 13 : 14, fontWeight:700, letterSpacing:"0.04em",
-            cursor:"pointer", boxShadow:"0 8px 24px rgba(34,211,238,0.3)",
-          }}>View My Work →</button>
-          <button onClick={() => goTo(4)} style={{
-            padding: isMobile ? "12px 24px" : "14px 32px", borderRadius:50,
-            background:"transparent",
-            border:"1.5px solid rgba(255,255,255,0.2)", color:"#f0f4ff",
-            fontFamily:"'Space Grotesk',sans-serif",
-            fontSize: isMobile ? 13 : 14, fontWeight:600, letterSpacing:"0.04em",
-            cursor:"pointer",
-          }}>Get In Touch</button>
+          <div style={{
+            position:"relative",
+            width: isMobile ? 260 : 360,
+            height: isMobile ? 260 : 360,
+          }}>
+            {/* Outer glow ring */}
+            <div style={{
+              position:"absolute", inset:-12,
+              borderRadius:"50%",
+              background:"conic-gradient(from 0deg, #D4AF37, #D4AF37, #D4AF37, #D4AF37, #D4AF37)",
+              opacity:0.4, filter:"blur(12px)",
+            }} />
+            {/* Inner border ring */}
+            <div style={{
+              position:"absolute", inset:0, borderRadius:"50%",
+              border:"2px solid rgba(212,175,55,0.4)",
+              boxShadow:"0 0 40px rgba(212,175,55,0.15)",
+            }} />
+            {/* Profile photo */}
+            <img
+              src="/assets/okwach_profile.png"
+              alt="Caleb Okwach"
+              style={{
+                width:"100%", height:"100%", borderRadius:"50%",
+                objectFit:"cover", objectPosition:"center top",
+                border:"3px solid rgba(212,175,55,0.5)",
+              }}
+            />
+          </div>
         </motion.div>
       </div>
     </div>
@@ -298,7 +344,7 @@ const AboutSection = () => {
         <button
           onClick={() => setExpanded(!expanded)}
           style={{
-            background:"none", border:"none", color:"#22d3ee", cursor:"pointer",
+            background:"none", border:"none", color:"#D4AF37", cursor:"pointer",
             fontFamily:"'Space Grotesk',sans-serif", fontSize:14, fontWeight:600,
             padding:0, marginBottom:40,
           }}
@@ -318,10 +364,10 @@ const AboutSection = () => {
           ].map(s => (
             <div key={s.label} style={{
               padding: isMobile ? "16px 18px" : "20px 24px",
-              background:"rgba(34,211,238,0.05)",
-              border:"1px solid rgba(34,211,238,0.15)", borderRadius:14,
+              background:"rgba(212,175,55,0.05)",
+              border:"1px solid rgba(212,175,55,0.15)", borderRadius:14,
             }}>
-              <div style={{ fontSize: isMobile ? 26 : 32, fontWeight:800, fontFamily:"'Syne',sans-serif", color:"#22d3ee", lineHeight:1, marginBottom:6 }}>{s.num}</div>
+              <div style={{ fontSize: isMobile ? 26 : 32, fontWeight:800, fontFamily:"'Syne',sans-serif", color:"#D4AF37", lineHeight:1, marginBottom:6 }}>{s.num}</div>
               <div style={{ fontSize:12, color:"rgba(160,185,230,0.7)", fontFamily:"'Space Grotesk',sans-serif", fontWeight:500 }}>{s.label}</div>
             </div>
           ))}
@@ -371,7 +417,7 @@ const ServicesSection = () => {
                 border:"1px solid rgba(255,255,255,0.07)", borderRadius:16,
               }}
             >
-              <div style={{ marginBottom:14, color:"#22d3ee" }}>{(() => { const Icon = svc.icon; return <Icon size={isMobile ? 28 : 32} />; })()}</div>
+              <div style={{ marginBottom:14, color:"#D4AF37" }}>{(() => { const Icon = svc.icon; return <Icon size={isMobile ? 28 : 32} />; })()}</div>
               <h3 style={{ fontSize: isMobile ? 16 : 17, fontWeight:700, fontFamily:"'Syne',sans-serif", color:"#f0f4ff", margin:"0 0 10px" }}>{svc.title}</h3>
               <p style={{ fontSize: isMobile ? 13 : 13, lineHeight:1.65, color:"rgba(180,200,240,0.65)", fontFamily:"'Space Grotesk',sans-serif", margin:0 }}>{svc.desc}</p>
             </motion.div>
@@ -403,13 +449,13 @@ const GraphicDesignShowcase = () => {
       marginBottom: isMobile ? 48 : 60,
       padding: isMobile ? "28px 20px" : "36px 32px",
       background:"rgba(15,23,42,0.8)",
-      border:"1px solid rgba(168,85,247,0.2)",
+      border:"1px solid rgba(212,175,55,0.2)",
       borderRadius:20,
     }}>
       <div style={{ marginBottom:20 }}>
         <div style={{
           fontSize:10, fontWeight:700, letterSpacing:"0.2em",
-          textTransform:"uppercase", color:"#a855f7", marginBottom:8,
+          textTransform:"uppercase", color:"#D4AF37", marginBottom:8,
           fontFamily:"'Space Grotesk',sans-serif",
         }}>Graphic Design Showcase</div>
         <h3 style={{
@@ -421,8 +467,8 @@ const GraphicDesignShowcase = () => {
             <span key={t} style={{
               fontSize:10, fontFamily:"'Space Grotesk',sans-serif", fontWeight:600,
               letterSpacing:"0.05em", padding:"2px 8px", borderRadius:20,
-              background:"rgba(168,85,247,0.12)", color:"#d8b4fe",
-              border:"1px solid rgba(168,85,247,0.25)",
+              background:"rgba(212,175,55,0.12)", color:"#f0d060",
+              border:"1px solid rgba(212,175,55,0.25)",
             }}>{t}</span>
           ))}
         </div>
@@ -447,14 +493,14 @@ const GraphicDesignShowcase = () => {
         <button onClick={prev} style={{
           position:"absolute", left:12, top:"50%", transform:"translateY(-50%)",
           width:36, height:36, borderRadius:"50%", background:"rgba(2,13,26,0.7)",
-          border:"1px solid rgba(168,85,247,0.3)", color:"#d8b4fe",
+          border:"1px solid rgba(212,175,55,0.3)", color:"#f0d060",
           display:"flex", alignItems:"center", justifyContent:"center",
           cursor:"pointer", fontSize:18, padding:0,
         }}>‹</button>
         <button onClick={next} style={{
           position:"absolute", right:12, top:"50%", transform:"translateY(-50%)",
           width:36, height:36, borderRadius:"50%", background:"rgba(2,13,26,0.7)",
-          border:"1px solid rgba(168,85,247,0.3)", color:"#d8b4fe",
+          border:"1px solid rgba(212,175,55,0.3)", color:"#f0d060",
           display:"flex", alignItems:"center", justifyContent:"center",
           cursor:"pointer", fontSize:18, padding:0,
         }}>›</button>
@@ -473,7 +519,7 @@ const GraphicDesignShowcase = () => {
         {GRAPHIC_PROJECTS.map((_, i) => (
           <button key={i} onClick={() => goTo(i)} style={{
             width: i === current ? 20 : 8, height:8, borderRadius:4, padding:0, border:"none",
-            background: i === current ? "#a855f7" : "rgba(168,85,247,0.3)",
+            background: i === current ? "#D4AF37" : "rgba(212,175,55,0.3)",
             cursor:"pointer", transition:"all 0.3s",
           }} />
         ))}
@@ -484,7 +530,7 @@ const GraphicDesignShowcase = () => {
         {GRAPHIC_PROJECTS.map((p, i) => (
           <button key={p.id} onClick={() => goTo(i)} style={{
             flexShrink:0, width:60, height:44, borderRadius:8, overflow:"hidden",
-            border:"2px solid " + (i===current ? "#a855f7" : "transparent"),
+            border:"2px solid " + (i===current ? "#D4AF37" : "transparent"),
             cursor:"pointer", padding:0,
           }}>
             <img src={p.image} alt={p.title} style={{ width:"100%", height:"100%", objectFit:"cover" }} />
@@ -517,9 +563,9 @@ const PortfolioSection = () => {
           {CATEGORIES.filter(c => c !== "Graphic Design").map(cat => (
             <button key={cat} onClick={() => { setFilter(cat); setVisibleCount(4); }} style={{
               padding: isMobile ? "8px 16px" : "9px 22px", borderRadius:50,
-              border: filter===cat ? "1.5px solid #22d3ee" : "1.5px solid rgba(255,255,255,0.12)",
-              background: filter===cat ? "rgba(34,211,238,0.12)" : "transparent",
-              color: filter===cat ? "#22d3ee" : "rgba(200,215,255,0.6)",
+              border: filter===cat ? "1.5px solid #D4AF37" : "1.5px solid rgba(255,255,255,0.12)",
+              background: filter===cat ? "rgba(212,175,55,0.12)" : "transparent",
+              color: filter===cat ? "#D4AF37" : "rgba(200,215,255,0.6)",
               fontFamily:"'Space Grotesk',sans-serif",
               fontSize: isMobile ? 12 : 13, fontWeight:600,
               cursor:"pointer", transition:"all 0.25s",
@@ -544,8 +590,8 @@ const PortfolioSection = () => {
             <button onClick={() => setVisibleCount(c => c + 4)} style={{
               padding:"12px 36px", borderRadius:50,
               background:"transparent",
-              border:"1.5px solid rgba(34,211,238,0.4)",
-              color:"#22d3ee",
+              border:"1.5px solid rgba(212,175,55,0.4)",
+              color:"#D4AF37",
               fontFamily:"'Space Grotesk',sans-serif",
               fontSize:14, fontWeight:600,
               cursor:"pointer", transition:"all 0.25s",
@@ -611,10 +657,10 @@ const ContactSection = () => {
               <div key={c.label} style={{ display:"flex", gap:16, marginBottom:24 }}>
                 <div style={{
                   width:44, height:44, borderRadius:12,
-                  background:"rgba(34,211,238,0.08)", border:"1px solid rgba(34,211,238,0.2)",
+                  background:"rgba(212,175,55,0.08)", border:"1px solid rgba(212,175,55,0.2)",
                   display:"flex", alignItems:"center", justifyContent:"center",
                   fontSize:18, flexShrink:0,
-                }}><c.icon size={18} color="#22d3ee" /></div>
+                }}><c.icon size={18} color="#D4AF37" /></div>
                 <div>
                   <div style={{ fontSize:12, color:"rgba(140,165,210,0.6)", fontFamily:"'Space Grotesk',sans-serif", marginBottom:3 }}>{c.label}</div>
                   {c.href ? (
@@ -647,11 +693,11 @@ const ContactSection = () => {
             {sent ? (
               <div style={{
                 padding:32, borderRadius:16,
-                background:"rgba(34,211,238,0.08)", border:"1px solid rgba(34,211,238,0.3)",
+                background:"rgba(212,175,55,0.08)", border:"1px solid rgba(212,175,55,0.3)",
                 textAlign:"center",
               }}>
-                <div style={{ marginBottom:12, color:"#22d3ee" }}><CheckCircle2 size={32} /></div>
-                <p style={{ color:"#22d3ee", fontFamily:"'Space Grotesk',sans-serif", fontWeight:600 }}>Message sent! I'll be in touch shortly.</p>
+                <div style={{ marginBottom:12, color:"#D4AF37" }}><CheckCircle2 size={32} /></div>
+                <p style={{ color:"#D4AF37", fontFamily:"'Space Grotesk',sans-serif", fontWeight:600 }}>Message sent! I'll be in touch shortly.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display:"flex", flexDirection:"column", gap:14 }}>
@@ -666,7 +712,7 @@ const ContactSection = () => {
                   style={{ ...inputStyle, resize:"none" }} />
                 <button type="submit" style={{
                   padding:"14px 28px", borderRadius:50,
-                  background:"linear-gradient(135deg, #22d3ee, #06b6d4)",
+                  background:"linear-gradient(135deg, #D4AF37, #06b6d4)",
                   border:"none", color:"#020d1a",
                   fontFamily:"'Space Grotesk',sans-serif", fontSize:14, fontWeight:700,
                   cursor:"pointer", alignSelf:"flex-start",
@@ -683,6 +729,14 @@ const ContactSection = () => {
 // ─── APP ─────────────────────────────────────────────────────────────────────
 
 export default function Portfolio() {
+  <>
+  <style>{`
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+  `}</style>
+  </>
   const isMobile = useIsMobile();
   const [active, setActive] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -734,7 +788,7 @@ export default function Portfolio() {
           {/* Logo */}
           <div style={{
             fontSize: isMobile ? 18 : 20, fontWeight:800, fontFamily:"'Syne',sans-serif",
-            background:"linear-gradient(90deg, #22d3ee, #a855f7)",
+            background:"linear-gradient(90deg, #D4AF37, #D4AF37)",
             WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent",
             letterSpacing:"-0.02em",
           }}>CALEB.CO</div>
@@ -745,9 +799,9 @@ export default function Portfolio() {
               {SECTIONS.map((s,i) => (
                 <button key={s} onClick={() => goTo(i)} style={{
                   padding:"6px 14px", borderRadius:20,
-                  background: active===i ? "rgba(34,211,238,0.12)" : "transparent",
-                  border: active===i ? "1px solid rgba(34,211,238,0.3)" : "1px solid transparent",
-                  color: active===i ? "#22d3ee" : "rgba(180,200,240,0.5)",
+                  background: active===i ? "rgba(212,175,55,0.12)" : "transparent",
+                  border: active===i ? "1px solid rgba(212,175,55,0.3)" : "1px solid transparent",
+                  color: active===i ? "#D4AF37" : "rgba(180,200,240,0.5)",
                   fontFamily:"'Space Grotesk',sans-serif", fontSize:13, fontWeight:500,
                   cursor:"pointer", transition:"all 0.2s",
                 }}>{s}</button>
@@ -768,7 +822,7 @@ export default function Portfolio() {
               aria-label="Toggle menu"
             >
               <span style={{
-                display:"block", width:18, height:2, background: menuOpen ? "#22d3ee" : "#f0f4ff",
+                display:"block", width:18, height:2, background: menuOpen ? "#D4AF37" : "#f0f4ff",
                 borderRadius:2, transition:"all 0.3s",
                 transform: menuOpen ? "rotate(45deg) translate(5px,5px)" : "none",
               }} />
@@ -778,7 +832,7 @@ export default function Portfolio() {
                 opacity: menuOpen ? 0 : 1,
               }} />
               <span style={{
-                display:"block", width:18, height:2, background: menuOpen ? "#22d3ee" : "#f0f4ff",
+                display:"block", width:18, height:2, background: menuOpen ? "#D4AF37" : "#f0f4ff",
                 borderRadius:2, transition:"all 0.3s",
                 transform: menuOpen ? "rotate(-45deg) translate(5px,-5px)" : "none",
               }} />
@@ -803,9 +857,9 @@ export default function Portfolio() {
                 <button key={s} onClick={() => goTo(i)} style={{
                   display:"block", width:"100%", textAlign:"left",
                   padding:"14px 16px", borderRadius:12, marginBottom:6,
-                  background: active===i ? "rgba(34,211,238,0.1)" : "transparent",
-                  border: active===i ? "1px solid rgba(34,211,238,0.25)" : "1px solid transparent",
-                  color: active===i ? "#22d3ee" : "rgba(200,220,255,0.7)",
+                  background: active===i ? "rgba(212,175,55,0.1)" : "transparent",
+                  border: active===i ? "1px solid rgba(212,175,55,0.25)" : "1px solid transparent",
+                  color: active===i ? "#D4AF37" : "rgba(200,220,255,0.7)",
                   fontFamily:"'Space Grotesk',sans-serif", fontSize:15, fontWeight:600,
                   cursor:"pointer",
                 }}>
@@ -842,7 +896,7 @@ export default function Portfolio() {
             {SECTIONS.map((s,i) => (
               <button key={s} onClick={() => goTo(i)} title={s} style={{
                 width: active===i ? 28 : 10, height:10, borderRadius:5, padding:0, border:"none",
-                background: active===i ? "#22d3ee" : "rgba(255,255,255,0.25)",
+                background: active===i ? "#D4AF37" : "rgba(255,255,255,0.25)",
                 cursor:"pointer", transition:"all 0.3s ease",
               }} aria-label={s} />
             ))}
