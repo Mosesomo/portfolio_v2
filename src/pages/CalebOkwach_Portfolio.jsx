@@ -292,27 +292,13 @@ const HeroSection = ({ goTo }) => {
             width: isMobile ? 260 : 360,
             height: isMobile ? 260 : 360,
           }}>
-            {/* Outer glow ring */}
-            <div style={{
-              position:"absolute", inset:-12,
-              borderRadius:"50%",
-              background:"conic-gradient(from 0deg, #D4AF37, #D4AF37, #D4AF37, #D4AF37, #D4AF37)",
-              opacity:0.4, filter:"blur(12px)",
-            }} />
-            {/* Inner border ring */}
-            <div style={{
-              position:"absolute", inset:0, borderRadius:"50%",
-              border:"2px solid rgba(212,175,55,0.4)",
-              boxShadow:"0 0 40px rgba(212,175,55,0.15)",
-            }} />
             {/* Profile photo */}
             <img
-              src="/assets/okwach_profile.png"
+              src="/assets/okwach_profile.jpeg"
               alt="Caleb Okwach"
               style={{
                 width:"100%", height:"100%", borderRadius:"50%",
                 objectFit:"cover", objectPosition:"center top",
-                border:"3px solid rgba(212,175,55,0.5)",
               }}
             />
           </div>
